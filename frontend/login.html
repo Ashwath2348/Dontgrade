@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - dontgrade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body data-page="login">
+    <div class="page">
+        <header class="hero">
+            <h1><span>dontgrade</span> - Short Text Readability Grader</h1>
+        </header>
+
+        <section class="auth-grid single-auth">
+            <div class="panel">
+                
+                <form id="loginForm" class="card form-card">
+                    <h3>Login</h3>
+                    <label>Email</label>
+                    <input id="loginEmail" type="email" required placeholder="john@example.com" />
+                    <label>Password</label>
+                    <input id="loginPassword" type="password" required placeholder="******" />
+                    <button type="submit">Login</button>
+                    <p class="helper">Don't have an account? <a href="/signup">Sign Up</a></p>
+                </form>
+            </div>
+        </section>
+
+        <div class="toast" id="toast"></div>
+    </div>
+
+    <script src="/assets/app.js"></script>
+</body>
+</html>

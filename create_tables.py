@@ -1,6 +1,8 @@
 
-from .database import engine, Base
-from . import models
+import Dontgrade.database
+import Dontgrade.models
+engine = Dontgrade.database.engine
+Base = Dontgrade.database.Base
 
 if __name__ == "__main__":
     print("Creating all tables...")

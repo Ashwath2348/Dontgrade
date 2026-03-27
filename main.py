@@ -23,7 +23,13 @@ app.add_middleware(
 app.include_router(auth_routes.router)
 app.include_router(analysis_routes.router)
 
-frontend_dir = Path(__file__).resolve().parents[1] / "frontend"
+repo_frontend_dir = Path(__file__).resolve().parent / "frontend"
+workspace_frontend_dir = Path(__file__).resolve().parents[1] / "frontend"
+frontend_dir = (
+    repo_frontend_dir
+    if repo_frontend_dir.exists()
+    else workspace_frontend_dir
+)
 assets_dir = frontend_dir / "assets"
 
 if assets_dir.exists():
@@ -36,3 +42,27 @@ def frontend_index():
     if index_file.exists():
         return FileResponse(index_file)
     return {"message": "Frontend not found"}
+
+
+@app.get("/login")
+def frontend_login_page():
+    login_file = frontend_dir / "login.html"
+    if login_file.exists():
+        return FileResponse(login_file)
+    return {"message": "Login page not found"}
+
+
+@app.get("/signup")
+def frontend_signup_page():
+    signup_file = frontend_dir / "signup.html"
+    if signup_file.exists():
+        return FileResponse(signup_file)
+    return {"message": "Signup page not found"}
+
+
+@app.get("/history-page")
+def frontend_history_page():
+    history_file = frontend_dir / "history.html"
+    if history_file.exists():
+        return FileResponse(history_file)
+    return {"message": "History page not found"}

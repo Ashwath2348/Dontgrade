@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>dontgrade - Short Text Readability Grader</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+		rel="stylesheet"
+	/>
+	<link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body data-page="main">
+	<div class="page">
+		<header class="hero">
+			<h1><span>dontgrade</span> - Short Text Readability Grader</h1>
+		</header>
+
+		<section class="app-shell" id="appSection">
+			<div class="workspace">
+				<div class="workspace-header">
+					<div class="page-tabs">
+						<a class="tab-link active" href="/">Analyze</a>
+						<a class="tab-link" href="/history-page">History</a>
+					</div>
+					<div class="user-actions">
+						<span id="currentUserEmail">user@example.com</span>
+						<button id="logoutBtn" class="link-btn">Logout</button>
+					</div>
+				</div>
+
+				<div class="card text-input-card">
+					<textarea id="inputText" rows="5" placeholder="Paste your text here..."></textarea>
+					<div class="actions">
+						<button id="analyzeBtn">Analyze Text</button>
+						<button id="clearBtn" class="secondary">Clear Text</button>
+					</div>
+				</div>
+
+				<div class="result-grid">
+					<div class="card result-card">
+						<h3>Results</h3>
+						<p><strong>Grade Level:</strong> <span id="gradeLevel">-</span></p>
+						<p><strong>Readability:</strong> <span id="readabilityClass">-</span></p>
+						<div id="resultAbbreviation"></div>
+					</div>
+
+					<div class="card suggestion-card">
+						<h3>Suggestions</h3>
+						<div id="suggestionList"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="toast" id="toast"></div>
+	</div>
+
+	<script src="/assets/app.js"></script>
+</body>
+</html>
